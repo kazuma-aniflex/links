@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error - Page Not Found</title>
+
+    <link rel="manifest" href="./manifest.json" />
+
+    <style>
+        /* latin-ext */
+        @font-face {
+          font-family: 'Kite One';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/kiteone/v22/70lQu7shLnA_E02vyp1S4nj2Ow.woff2) format('woff2');
+          unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+        }
+        /* latin */
+        @font-face {
+          font-family: 'Kite One';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url(https://fonts.gstatic.com/s/kiteone/v22/70lQu7shLnA_E02vyp1c4ng.woff2) format('woff2');
+          unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+        }
+        
+        *,
+        ::after,
+        ::before {
+            box-sizing: border-box;
+            font-family: 'Kite One', sans-serif !important;
+        }
+    </style>
+
+    <style>
+        .error-message {
+            color: red;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 100px;
+        }
+
+        h1 {
+            font-size: 4em;
+            color: #333;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        a {
+            color: #222;
+            opacity: 1;
+            transition: opacity 250ms ease-in-out;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover,
+        a:focus-within {
+            opacity: 1;
+        }
+
+        a::after {
+            content: '';
+            width: 0px;
+            height: 2px;
+            display: block;
+            background: #222;
+            transition: 200ms;
+        }
+
+        a:hover::after,
+        a:focus-within::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="error-message">404 Error - Page Not Found</h1>
+    <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
+    <p>Return to the <a href="/">homepage</a>.</p>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('./service-worker.js')
+        }
+    </script>
+</body>
+
+</html>
