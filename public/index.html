@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title and Description -->
+    <meta name="title" content="Kana Arima">
     <meta name="description" content="The greatest fan of Kana Arima from ONK Series, no matter what the world has to say but I'll be the greatest fan of Kana-chan forever, want to check out my social media accounts then this page should lead you to my social media accounts.">
-    <meta name="robots" content="index, follow">
     <meta name="keywords" content="Kana, Arima, Oshi no Ko, My star, Waifu, Fandom">
-    <meta name="theme-color" content="#FFC0CB">
+    <meta name="theme-color" content="#a96a87">
+    
+    <!-- Open Graph, 
+         Facebook, 
+         Instagram -->
+    <meta property="og:title" content="Kana Arima">
+    <meta property="og:description" content="The greatest fan of Kana Arima from ONK Series, no matter what the world has to say but I'll be the greatest fan of Kana-chan forever, want to check out my social media accounts then this page should lead you to my social media accounts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kana-arima.vercel.app">
+    <meta property="og:image" content="https://kana-arima.vercel.app/icons/manifest-icon-512.maskable.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kana Arima">
+    <meta name="twitter:description" content="The greatest fan of Kana Arima from ONK Series, no matter what the world has to say but I'll be the greatest fan of Kana-chan forever, want to check out my social media accounts then this page should lead you to my social media accounts.">
+    <meta name="twitter:image" content="https://kana-arima.vercel.app/icons/manifest-icon-512.maskable.png">
+    <meta name="twitter:site" content="@OtakuBoy00701">
+    <meta name="twitter:creator" content="@OtakuBoy00701">
 
     <style>
         /* latin-ext */
@@ -29,6 +49,8 @@
         }
     </style>
 
+<!-- Favicon -->
+    <link rel="apple-touch-icon" href="https://kana-arima.vercel.app/icons/manifest-icon-512.maskable.png">
     <link rel="icon" href="./favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="./favicon.ico" />
 
@@ -44,29 +66,18 @@
             font-family: 'Kite One', sans-serif !important;
         }
 
-        :root {
-            --foreground-rgb: 0, 0, 0;
-            --background-start-rgb: 214, 219, 220;
-            --background-end-rgb: 69, 69, 69;
-        }
-
-        @media (prefers-color-scheme: dark) {
-        :root {
-                --foreground-rgb: 225, 255, 255;
-                --background-start-rgb: 0, 0, 0;
-                --background-end-rgb: 69, 69, 69;
-            }
-        }
-
         html, body {
             border: 0 !important;
             margin: 0 !important;
         }
         
         body {
-            color: rgb(var(--foreground-rgb));
-            background: linear-gradient(to bottom, transparent 65%, rgb(var(--background-end-rgb)))
-            rgb(var(--background-start-rgb));
+            background: linear-gradient(to bottom, #a96a87 30%, #773939 90%);
+            color: #6f515c;
+        }
+        
+        #userName {
+            color: #FFFFFF;
         }
 
         main {
@@ -111,7 +122,7 @@
             font-weight: 600;
         }
         
-        a, button {
+        a, button, .logo {
             outline: none;
             -webkit-tap-highlight-color: transparent;
             -moz-tap-highlight-color: transparent;
@@ -269,9 +280,14 @@
             max-width: 1000px;
         }
 
-        .logo 
-        {
+        .logo {
             cursor: pointer;
+            transition: all 250ms ease-in-out;
+            opacity: .75;
+        }
+        
+        .logo:hover, .logo:focus-within {
+            opacity: 1;
         }
     </style>
 </head>
@@ -387,6 +403,32 @@
             twitter.addEventListener("click", function() {
               window.open("https://twitter.com/arima_kana_chan", "_blank");
             });
+        });
+    </script>
+    
+    <script>
+        const allLinks = document.querySelectorAll("a");
+
+        allLinks.forEach(function(link) {
+          link.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+          });
+        });
+        
+        const allImages = document.querySelectorAll("img");
+        
+        allImages.forEach(function(img) {
+          img.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+          });
+        });
+        
+        const allButtons = document.querySelectorAll("button");
+        
+        allButtons.forEach(function(button) {
+          button.addEventListener("contextmenu", function(event) {
+            event.preventDefault();
+          });
         });
     </script>
 </body>
