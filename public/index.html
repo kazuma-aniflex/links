@@ -326,7 +326,6 @@
             justify-content: center;
             border: none;
             border-color: #ffffff;
-            cursor: pointer;
         }
 
         .modal {
@@ -452,7 +451,6 @@ style="fill:#000000;">
                   <button style="
                       font-size: 30px;
                       font-weight: bold;
-                      cursor: pointer;
                       color: #6f515c;" data-close-button class="close-button">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -852,23 +850,33 @@ style="fill:#000000;">
     });
     
     // Web Share API (browser default sharing) 
-    document.getElementById("shareMore").addEventListener("click", function() {
-            // Define the message and link to share
-            var message = "Check out this link: ";
-            var url = "https://kana-arima.vercel.app";
+    document.addEventListener("DOMContentLoaded", function() {
+    var shareMoreElement = document.getElementById("shareMore");
 
-
-            if (navigator.share) {
-                navigator.share({
-                    title: "Check this out",
-                    text: message,
-                    url: url
-                })
-                .then(() => console.log("Shared successfully"))
-                .catch(error => console.error("Share failed:", error));
-            }
-    });
+        if (shareMoreElement && !navigator.share) {
+            shareMoreElement.style.display = "none"; // Hide the element
+            shareMoreElement.remove(); // Remove the element from the DOM
+        }
     
+        if (shareMoreElement) {
+            shareMoreElement.addEventListener("click", function() {
+                // Define the message and link to share
+                var message = "Check out this link: ";
+                var url = "https://kana-arima.vercel.app";
+    
+                if (navigator.share) {
+                    navigator.share({
+                        title: "Check this out",
+                        text: message,
+                        url: url
+                    })
+                    .then(() => console.log("Shared successfully"))
+                    .catch(error => console.error("Share failed:", error));
+                }
+            });
+        }
+    });
+
     const linkToCopy = "https://kana-arima.vercel.app";
 
     function copyLink() {
