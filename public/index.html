@@ -429,7 +429,7 @@
     <main>
         <header id="header">
             <div class="three-dots">
-              <button class="three-dots-btn" style="cursor: pointer;" data-modal-target="#modal">
+              <button class="three-dots-btn" style="cursor: pointer; pointer-events: auto;" data-modal-target="#modal">
                     <svg class="three-dots-svg" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 100 20">
                       <circle cx="25" cy="10" r="5" fill="black" />
                       <circle cx="50" cy="10" r="5" fill="black" />
@@ -552,9 +552,9 @@ style="fill:#000000;">
                       <span style="
                         text-align: right;
                         width: 15%;
-                        padding-right: .5rem;"
-                      >
-                          <img style="height: 25px; border-radius: 5px;" src="./favicon.ico" />
+                        padding-right: .5rem;
+                        cursor: default;">
+                          <img style="height: 25px; border-radius: 5px; cursor: default;" src="./favicon.ico" />
                       </span>
                       <span style="width: 85%; padding-right: .5rem;">
                           <input readonly onfocus="this.blur()" type="text" value="https://kana-arima.vercel.app" id="linkToCopy" style="width: 100%; border: none; background-color: #F0F0F0;">
