@@ -709,17 +709,17 @@ style="fill:#000000;">
     </script>
     
     <script>
-        const openModalButtons = document.querySelectorAll('[data-modal-target]')
+        // const openModalButtons = document.querySelectorAll('[data-modal-target]')
         const closeModalButtons = document.querySelectorAll('[data-close-button]')
         const overlay = document.getElementById('overlay')
         const closeBtn = document.querySelector('.three-dots-btn')
         
-        openModalButtons.forEach(button => {
-          button.addEventListener('click', () => {
-            const modal = document.querySelector(button.dataset.modalTarget)
-            openModal(modal)
-          })
-        })
+        // openModalButtons.forEach(button => {
+          // button.addEventListener('click', () => {
+            // const modal = document.querySelector(button.dataset.modalTarget)
+            // openModal(modal)
+          // })
+        // })
         
         overlay.addEventListener('click', () => {
           const modals = document.querySelectorAll('.modal.active')
@@ -735,7 +735,9 @@ style="fill:#000000;">
                 modals.forEach(modal => {
                   closeModal(modal)
                 })
-            }
+            } else {
+                const modal = document.querySelector(button.dataset.modalTarget)
+                openModal(modal)
         })
         
         closeModalButtons.forEach(button => {
