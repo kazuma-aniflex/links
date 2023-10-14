@@ -729,14 +729,14 @@ style="fill:#000000;">
         })
 
         const check = document.querySelector('.modal')
-        if (check.classList.contains('active')) {
-            closeBtn.addEventListener('click', () => {
+        closeBtn.addEventListener('click', () => {
+            if (check.classList.contains('active')) {
                 const modals = document.querySelectorAll('.modal.active')
                 modals.forEach(modal => {
                   closeModal(modal)
                 })
-            })
-        }
+            }
+        })
         
         closeModalButtons.forEach(button => {
           button.addEventListener('click', () => {
